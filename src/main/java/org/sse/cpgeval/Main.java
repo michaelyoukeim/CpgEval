@@ -45,7 +45,7 @@ public class Main {
 
         if (cpgTry.isSuccess()) {
             Cpg cpg = cpgTry.get();
-            return;
+            cpg.close();
         } else if (cpgTry.isFailure()) {
             Throwable exception = cpgTry.failed().get();
             throw new RuntimeException(exception.getMessage());
@@ -66,11 +66,11 @@ public class Main {
         String resourcesDir = "src/main/resources";
 
         String jarFilePath = String.format("%s/commons-lang3-3.14.0.jar", resourcesDir);
-        String cpgPath = String.format("%s/out/someout.cpg", resourcesDir);
+        String cpgPath = String.format("%s/out/commons.bin", resourcesDir);
 
         example.generateCFG(jarFilePath, cpgPath);
-        if (true) return;
         Cpg cpg = example.readCpg(cpgPath);
+        // if (true) return;
 
         ArrayList<Method> methods = new ArrayList<>();
         cpg.graph().nodes("METHOD").forEachRemaining(node -> methods.add((Method) node));
@@ -91,8 +91,8 @@ public class Main {
                     CollectionConverters.SeqHasAsJava(cfgGraph.vertices().toSeq()).asJava();
             List<Edge> edges = CollectionConverters.SeqHasAsJava(cfgGraph.edges().toSeq()).asJava();
 
-            System.out.println(((Call) vertices.get(0)).code());
-            System.out.println(edges.get(0));
+            // System.out.println(((Call) vertices.get(0)).code());
+            // System.out.println(edges.get(0));
 
             cfgGraph.edges();
             break;

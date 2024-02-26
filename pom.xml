@@ -23,6 +23,10 @@
             <id>joern-repo</id>
             <url>https://mvnrepository.com/artifact/io.joern/jimple2cpg</url>
         </repository>
+        <repository>
+            <id>/maven.google.com</id>
+            <url>https://maven.google.com</url>
+        </repository>
     </repositories>
 
 
@@ -42,10 +46,18 @@
         <dependency>
             <groupId>com.github.michaelyoukeim.sootup</groupId>
             <artifactId>sootup.codepropertygraph</artifactId>
-            <version>myk-cpg-v0.1.0-alpha</version>
+            <version>myk-cpg-v0.1.2-alpha</version>
         </dependency>
-
-
+        <dependency>
+            <groupId>org.soot-oss</groupId>
+            <artifactId>sootup.jimple.parser</artifactId>
+            <version>1.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.soot-oss</groupId>
+            <artifactId>soot</artifactId>
+            <version>4.4.1</version>
+        </dependency>
     </dependencies>
 
 </project>
