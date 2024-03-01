@@ -15,7 +15,7 @@ import soot.options.Options;
 public class SootArtifactGenerator {
 
   public static void main(String[] args) throws IOException {
-    String resourcesDir = "sootup.codepropertygraph.evaluation/src/test/resources/";
+    String resourcesDir = "src/test/resources/";
     Path inputDir = Paths.get(resourcesDir + "sootup-artifacts/");
     String outputBasePath = inputDir.toFile().getCanonicalPath();
 

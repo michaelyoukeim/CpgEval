@@ -62,8 +62,8 @@ public abstract class AbstractGraphGenerator {
       result.put("failed", false);
 
     } catch (Exception e) {
-      e.printStackTrace();
-      //result.put("error", e);
+      // e.printStackTrace();
+      result.put("errorMessage", e.getMessage());
       result.put("failed", true);
     } finally {
       long endTime = System.currentTimeMillis();
